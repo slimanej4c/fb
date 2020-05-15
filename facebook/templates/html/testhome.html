@@ -1,0 +1,15 @@
+{% extends 'html/base.html' %}
+
+{% block testhome %}
+   <form action="" method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="posted">
+</form>
+    {%  for i in text %}
+    <h1>{{ i}}</h1>
+
+    {% endfor %}
+
+{% endblock %}
