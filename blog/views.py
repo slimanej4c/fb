@@ -11,20 +11,29 @@ def create_user_view (request):
         form=UserCreationForm(request.POST )
         if form.is_valid():
             form.save()
-            return redirect('blog/home')
+            return redirect('/blog/base')
     else:
         form = UserCreationForm()
         context={'form':form}
         return render(request, 'html/register_view.html', context)
 
-
 def create_user_form(request):
-    form=create_user(request.POST or None)
+    if request.method=='POST':
+        form=create_user(request.POST )
+        if form.is_valid():
+            form.save()
+            return redirect('/blog/base')
+    else:
+        form = create_user()
+        context={'form':form}
+        return render(request, 'html/register_view.html', context)
+
+    """form=create_user(request.POST or None)
     if form.is_valid():
         form.save()
     context={'form':form}
     return render(request, 'html/register_form.html', context)
-
+"""
 
 def profile(request):
     context={'user':request.user}

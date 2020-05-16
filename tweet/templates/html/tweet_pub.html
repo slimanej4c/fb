@@ -1,0 +1,22 @@
+{%  extends 'html/base.html' %}
+
+{%  block tweet_pub %}
+
+
+    <h1> publier votre tirmom </h1>
+
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="publier">
+
+    </form>
+    <h1>{{ a }}</h1>
+
+    {%  for i in x %}
+      title:   {{ i.title_pub }}<br>
+
+        publication :{{ i.text_pub }}<br>
+
+    {%  endfor %}
+{% endblock %}

@@ -57,8 +57,15 @@
       </li>
 
               <li class="nav-item active">
-        <a class="nav-link" href="/facebook/pub/{{ user.id }}">pub <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/facebook/pub/{{ user.id }}">pub_fb <span class="sr-only">(current)</span></a>
       </li>
+
+                    <li class="nav-item active">
+        <a class="nav-link" href="{% url 'tweet:tweet_home' %}">tweet home <span class="sr-only">(current)</span></a>
+      < <li class="nav-item active">
+        <a class="nav-link" href="{% url 'tweet:tweet_pub' %}">tweet pub <span class="sr-only">(current)</span></a>
+      </li>
+
 
             <li class="nav-item active">
         <a class="nav-link" href="#">add info  <span class="sr-only">(current)</span></a>
@@ -101,6 +108,11 @@
       {% endblock %}
  {% block pub_fb %}
       {% endblock %}
+
+  {% block tweet_home %}
+      {% endblock %}
+  {%  block tweet_pub %}
+  {% endblock %}
 
   </div>
 </main>
