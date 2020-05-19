@@ -6,13 +6,13 @@ class pub_views(TemplateView):
      template_name = "html/pub.html"
 
 
-     def get(self, request,idd):
+     def get(self, request):
           x = pub_model.objects.filter(user=request.user)
           form=pub_form()
           return render(request,self.template_name,{'form':form,'x':x})
 
 
-     def post(self,request,idd):
+     def post(self,request):
           form=pub_form(request.POST)
           text=[]
           if form.is_valid():

@@ -3,4 +3,10 @@
 {%  block tweet_home %}
 
     <h1> helo you are in tweet_home</h1>
+
+    {%  for i in job  %}
+        <h3>{{ i.fname }}</h3>
+        <h3> {{ i.job_name }}</h3>
+
+    {% endfor %}
 {% endblock %}

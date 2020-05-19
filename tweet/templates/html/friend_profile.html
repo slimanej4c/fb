@@ -1,0 +1,15 @@
+{%  extends 'html/base.html' %}
+{% block tweet_profile %}
+{%  for user in profile %}
+
+<h3>name : {{ user.first_name }}</h3><br/>
+<h3>username :{{ user.username }}</h3><br/>
+<h3>lastname :{{ user.last_name }}</h3><br/>
+<h3>password : {{ user.password }}</h3>
+<h3>password : {{ user.user_profile.description}}</h3>
+<h3>password : {{ user.user_profile.phone }}</h3>
+
+
+    {% endfor %}
+
+      {% endblock %}}
